@@ -3,13 +3,13 @@
         <div class="currency-selection">
             <input type="number" name="value-field" id="first-value-field" [(ngModel)]="firstCurrencyValue" (ngModelChange)="convertFirstCurrency()">
             <select name="dropdown" id="first-dropdown" [(ngModel)]="firstCurrency" (ngModelChange)="convertFirstCurrency()">
-                <option *ngFor="let currency of currencyOptions" [value]="currency">{{ currency }}</option>
+                <option *ngFor="let currency of currencyOptions" [value]="currency.cc">{{ currency.cc }}</option>
             </select>
         </div>
         <div class="currency-selection">
             <input type="number" name="value-field" id="second-value-field" [(ngModel)]="secondCurrencyValue" (ngModelChange)="convertSecondCurrency()">
             <select name="dropdown" id="second-dropdown" [(ngModel)]="secondCurrency" (ngModelChange)="convertSecondCurrency()">
-                <option *ngFor="let currency of currencyOptions" [value]="currency">{{ currency }}</option>
+                <option *ngFor="let currency of currencyOptions" [value]="currency.cc">{{ currency.cc }}</option>
             </select>
         </div>
     </div>
