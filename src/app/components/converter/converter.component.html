@@ -1,16 +1,17 @@
-<section class="converter">
+<form [formGroup]="converterForm" class="converter">
     <div class="wrapper">
-        <div class="currency-selection">
-            <input type="number" name="value-field" id="first-value-field" [(ngModel)]="firstCurrencyValue" (ngModelChange)="convertFirstCurrency()">
-            <select name="dropdown" id="first-dropdown" [(ngModel)]="firstCurrency" (ngModelChange)="convertFirstCurrency()">
-                <option *ngFor="let currency of currencyOptions" [value]="currency.cc">{{ currency.cc }}</option>
-            </select>
-        </div>
-        <div class="currency-selection">
-            <input type="number" name="value-field" id="second-value-field" [(ngModel)]="secondCurrencyValue" (ngModelChange)="convertSecondCurrency()">
-            <select name="dropdown" id="second-dropdown" [(ngModel)]="secondCurrency" (ngModelChange)="convertSecondCurrency()">
-                <option *ngFor="let currency of currencyOptions" [value]="currency.cc">{{ currency.cc }}</option>
-            </select>
-        </div>
+      <div class="currency-selection">
+        <input type="number" name="value-field" min = "0" id="first-value-field" formControlName="firstCurrencyValue" (input)="convertFirstCurrency()">
+        <select name="dropdown" id="first-dropdown" formControlName="firstCurrency" (change)="convertFirstCurrency()">
+          <option *ngFor="let currency of currencyOptions" [value]="currency.cc">{{ currency.cc }}</option>
+        </select>
+      </div>
+      <div class="currency-selection">
+        <input type="number" name="value-field" min = "0" id="second-value-field" formControlName="secondCurrencyValue" (input)="convertSecondCurrency()">
+        <select name="dropdown" id="second-dropdown" formControlName="secondCurrency" (change)="convertSecondCurrency()">
+          <option *ngFor="let currency of currencyOptions" [value]="currency.cc">{{ currency.cc }}</option>
+        </select>
+      </div>
     </div>
-</section>
+  </form>
+  
