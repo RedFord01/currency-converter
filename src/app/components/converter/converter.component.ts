@@ -48,7 +48,7 @@ export class ConverterComponent implements OnInit {
       const exchangeRate = this.getExchangeRate(fromCurrency, fromCurrencyRate, toCurrency, toCurrencyRate);
 
       if (exchangeRate) {
-        return Number((inputValue * exchangeRate).toFixed(2));
+        return Number((inputValue * exchangeRate).toFixed(4));
       }
     }
     return 0;
